@@ -25,7 +25,7 @@ cd OpenWrt-ImageBuilder-15.05.1-ar71xx-generic.Linux-x86_64
 - Make images
 
 ```
-sudo make image PROFILE=TLWDR4300 PACKAGES =”zlib libffi libpthread python-light python-base block-mount kmod-fs-ext4 kmod-fs-vfat kmod-nls-cp437 kmod-nls-iso8859-1 libopenssl”  
+sudo make image PROFILE=TLWDR4300
 ```
 
 - Copy images to router
@@ -38,7 +38,7 @@ scp openwrt-15.05-1.ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin root@192.1
 - Install the firmware (ssh into router first)
 
 ```
-mtd -r write /tmp/openwrt-15.05.1.ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin
+mtd -r write /tmp/openwrt-15.05.1.ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin firmware
 ```
 
 ##### Flash Upgrade 
@@ -64,12 +64,12 @@ tar -xvf OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Lin
 
 ##### 2. Downloading Seattle code and Makefile
 
-> Change into the package directory of the SDK, and clone the Seattle code. This code was provided by Xuefeng Huang. It can be accessed at https://github.com/XuefengHuang/seattle-package. Note this binary code is meant to be executed on a machine running Linux. 
+> Change into the package directory of the SDK, and clone the Seattle code. 
 
 ```
 cd OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/package
-git clone https://github.com/XuefengHuang/seattle-package.git
-mv seattle-package seattle
+git clone https://github.com/rf1591/Seattle-OpenWrt
+mv Seattle-OpenWrt seattle
 ```
 
 ##### 3. Building Seattle .ipk
@@ -77,9 +77,11 @@ mv seattle-package seattle
 > Return to the SDK directory and execute make. 
 
 ```
-cd..
+cd ..
 make clean && make world
 ```
+
+> If make is executed error-free, the .ipk should be found in /bin/ar71xx/packages/base.
 
 ##### 4. Copy the package to the router
 
@@ -106,7 +108,7 @@ The following are descriptions of common issues/errors encountered when trying t
 
 * Abrupt exit from Seattle installation from .ipk due to insufficient memory in `/overlay`
   - Change destination of Seattle installation to /tmp 
-  - `opkg install seatte_1.0-1_ar71xx.ipk -d ram`
+  - `opkg install seattle_1.0-1_ar71xx.ipk -d ram`
 
 
 
