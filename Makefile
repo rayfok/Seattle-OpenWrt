@@ -39,9 +39,7 @@ endef
 
 define Package/seattle/install
 	$(INSTALL_DIR) $(1)/seattle
-	$(CP) -r ./files/seattle/* $(1)/seattle
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(CP) ./files/etc/init.d/seattle $(1)/etc/init.d/seattle        
+	$(CP) -r ./seattle/* $(1)/seattle      
 endef
 
 define Package/seattle/postinst
