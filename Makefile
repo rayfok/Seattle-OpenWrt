@@ -21,7 +21,7 @@ define Package/seattle
   CATEGORY:=Network
   TITLE:=Seattle Testbed
   URL:= https://seattle.poly.edu/html/
-  DEPENDS:=+python +libpthread +zlib +libffi
+  DEPENDS:=+python-light +libpthread +zlib +libffi
 endef
 
 define Package/seattle/description
