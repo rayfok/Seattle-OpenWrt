@@ -32,7 +32,7 @@ sudo make image PROFILE=TLWDR4300
 
 ```
 cd bin/ar71xx
-scp openwrt-15.05-1.ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin root@192.168.1.1:/tmp
+scp openwrt-15.05.1.ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin root@192.168.1.1:/tmp
 ```
 
 - Install the firmware (ssh into router first)
@@ -46,7 +46,7 @@ If a previous version of OpenWrt exists on the router, ssh into the device and r
 ```
 cd /tmp 
 wget downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/openwrt-15.05-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin
-mtd -r write /tmp/openwrt-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin firmware
+mtd -r write /tmp/openwrt-15.05-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin firmware
 ```
 
 
@@ -58,8 +58,8 @@ mtd -r write /tmp/openwrt-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin firm
 
 ```
 cd ~ 
-wget downloads.openwrt.org/chaos_calmer/15.05-rc2/ar71xx/generic/OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
-tar -xvf OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+wget https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/generic/OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+tar -xvf OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 ```
 
 ##### 2. Downloading Seattle code and Makefile
@@ -67,7 +67,7 @@ tar -xvf OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Lin
 > Change into the package directory of the SDK, and clone the Seattle code. 
 
 ```
-cd OpenWrt-SDK-15.05-rc2-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/package
+cd OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64/package
 git clone https://github.com/rf1591/Seattle-OpenWrt
 mv Seattle-OpenWrt seattle
 ```
@@ -95,8 +95,8 @@ opkg install /tmp/seattle_1.0-1_ar71xx.ipk
 ### Errors I Ran Into
 The following are descriptions of common issues/errors encountered when trying to install OpenWrt/Seattle onto a router. Included are how they were resolved.
 
-* Tried to execute make in OS X terminal. 
-  - Needed to make in Linux. 
+* Tried to execute make in OS X terminal. Resulted in heaps of "cannot execute binary file" errors. 
+  - Wrong OS. Rebuild in Linux. 
 
 * After deleting some packages on the router to free up memory, router became read-only system.
   - Remount the system read-write 
