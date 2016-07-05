@@ -1,0 +1,8 @@
+# Seattle on OpenWrt
+
+Seattle is an open-source, peer-to-peer platform designed to enhance networking and distributed systems research. Established on the resource donation of users and institutions worldwide, Seattle’s global distribution makes it ideal for applications in cloud computing, networking, ubiquitous computing. Users can install the Seattle Testbed to run their code in a safe and contained sandboxed environment, limiting the consumption of resources such as CPU, memory, storage space, and network bandwidth, and ensuring that the tested programs are isolated from other files or programs. These characteristics allow distributed code testing without compromising the machine’s performance or security. 
+
+Our goal is to deploy Seattle on OpenWrt, a flexible GNU/Linux extension built on the Almquist shell designed to grant users a full customization of their wireless routers. This operating system includes a fully writable filesystem with a package management system to free the user from the restrictions of a vendor application selection and configuration, and a cross-compilation toolchain to migrate images built on a host machine to embedded devices. Compared to computer and mobile environments, routers offer limited computational resources and require an optimization of the minimal flash storage that is available. Our approach employs OpenWrt’s Custom Image Generator to generate a light-weight image and resolve Seattle’s dependencies, and Seattle’s Custom Installer Builder to package Seattle base installers into an OpenWrt-compliant tarball. Ultimately, this project would give researchers access to a testbed for a wide range of network measurements and experiments, notably increasing transparency between ISP and home networks. 
+
+ 
+
