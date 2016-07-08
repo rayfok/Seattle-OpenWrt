@@ -1,4 +1,4 @@
-# Porting and Packaging Seattle Testbed for Wireless Routers Running OpenWrt 
+# Porting and Packaging Seattle Testbed for OpenWrt 
 
 Seattle Testbed is an open-source, peer-to-peer platform designed to enhance networking and distributed systems research. Established on the resource donation of users and institutions worldwide, Seattle’s global distribution makes it ideal for applications in cloud computing, networking, and ubiquitous computing. Users can install Seattle for code experimentation in a safe and contained sandboxed environment, limiting the consumption of resources such as CPU, memory, storage space, and network bandwidth, and ensuring that the tested programs are isolated from other files or programs. These characteristics allow distributed code testing without compromising the machine’s performance or security. 
 
