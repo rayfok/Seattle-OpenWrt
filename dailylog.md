@@ -2,6 +2,8 @@
 
 ### 7/7/16
 
+##### Running unit tests for OpenWrt 
+
 - repy_v2:
     - Specified repy program is unsafe
         - In `safe.py`, increased timeout for OpenWrt routers to 100 seconds ([ref](https://github.com/rf1591/repy_v2/blob/master/safe.py#L121))
@@ -53,7 +55,36 @@
         - httpretrieve_*.py
             - dy_import_module_symbols is not defined
 - nodemanager
-    -
+    - Stuck on writing vessel dictionary (>30 minutes)
+    - NMClientException from nmclient_createhandle
+
+- librepy
+    - recvmess-basic.r2py
+        - exceptions.AssertionError
+    - socket-nonblocksend.r2py
+        - socket closed by the remote end
+    - socket-sockpeername.r2py
+        - socket has been closed
+    - socket-timeoutsend.r2py
+        - socket closed by the remote end
+    - socket-timeoutrecv.r2py 
+        - socket closed by the remote end
+    - waitforconn-basic.r2py
+        - can't bind to ip
+    - waitforconn-reusethreadpool.r2py
+        - can't bind to ip
+
+### 7/8/16
+
+- Trying to fix problem with ut_nm_subprocess.py hanging
+    - Gets stuck after "Writing vessl dictionary"
+    - Successfully runs nminit.py and nmmain.py
+    - Gets stuck on line 17 (try: sys.std.in.read())
+    - Can't find file v2/nodemanager.old
+
+
+
+
 
 
 
