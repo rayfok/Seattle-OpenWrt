@@ -353,5 +353,121 @@ Total time taken to run tests on module repyv2api is: 7636.2
 	- nodemanager
 	    - same errors in nmclient_createhandle() as before
 
+	```
+	root@OpenWrt:/tmp/nodemanager/RUNNABLE# python utf.py -t -a
+Testing module: nm
+Now starting subprocess: ut_nm_subprocess.py
+Generating user keys...
+    Running: ut_nm_addfiletovessel.r2py                    	Generating key...
+Writing config file...
+Writing vessel dictionary...
+ [ FAIL ] [ 1645.s ]
+--------------------------------------------------------------------------------
+Standard error :
+..............................Produced..............................
+---
+Uncaught exception!
+---
+Following is a full traceback, and a user traceback.
+The user traceback excludes non-user modules. The most recent call is displayed last.
+
+Full debugging traceback:
+  "repy.py", line 154, in execute_namespace_until_completion
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "ut_nm_addfiletovessel.r2py", line 36, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+User traceback:
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "ut_nm_addfiletovessel.r2py", line 36, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+Exception (with class '.NMClientException'): RepyArgumentError("Provided destip is not valid! IP: '2c7968b8d39396bf85f796fc15aad0a143963d28'",)
+---
+
+..............................Expected..............................
+None
+--------------------------------------------------------------------------------
+    Running: ut_nm_addfiletovessel_duplicate_filename.r2py  	[ FAIL ] [ 1611.s ]
+--------------------------------------------------------------------------------
+Standard error :
+..............................Produced..............................
+---
+Uncaught exception!
+---
+Following is a full traceback, and a user traceback.
+The user traceback excludes non-user modules. The most recent call is displayed last.
+
+Full debugging traceback:
+  "repy.py", line 154, in execute_namespace_until_completion
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "ut_nm_addfiletovessel_duplicate_filename.r2py", line 35, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+User traceback:
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "ut_nm_addfiletovessel_duplicate_filename.r2py", line 35, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+Exception (with class '.NMClientException'): RepyArgumentError("Provided destip is not valid! IP: '2c7968b8d39396bf85f796fc15aad0a143963d28'",)
+---
+
+..............................Expected..............................
+None
+--------------------------------------------------------------------------------
+    Running: ut_nm_addfiletovessel_emptyfile.r2py           	[ FAIL ] [ 1617.s ]
+--------------------------------------------------------------------------------
+Standard error :
+..............................Produced..............................
+---
+Uncaught exception!
+---
+Following is a full traceback, and a user traceback.
+The user traceback excludes non-user modules. The most recent call is displayed last.
+
+Full debugging traceback:
+  "repy.py", line 154, in execute_namespace_until_completion
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "/tmp/nodemanager/RUNNABLE/virtual_namespace.py", line 117, in evaluate
+  "/tmp/nodemanager/RUNNABLE/safe.py", line 591, in safe_run
+  "ut_nm_addfiletovessel_emptyfile.r2py", line 34, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+User traceback:
+  "dylink.r2py", line 546, in <module>
+  "dylink.r2py", line 407, in dylink_dispatch
+  "dylink.r2py", line 520, in evaluate
+  "ut_nm_addfiletovessel_emptyfile.r2py", line 34, in <module>
+  "nmclient.r2py", line 298, in nmclient_createhandle
+
+Exception (with class '.NMClientException'): RepyArgumentError("Provided destip is not valid! IP: '2c7968b8d39396bf85f796fc15aad0a143963d28'",)
+---
+
+..............................Expected..............................
+None
+--------------------------------------------------------------------------------
+
+	```
+
 
 

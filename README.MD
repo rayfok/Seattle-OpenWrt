@@ -104,9 +104,9 @@ mtd -r write /tmp/openwrt-15.05.1-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.
 
 1. Download the Seattle tarball. 
 2. Copy the tarball to OpenWrt with `scp seattle_openwrt.tar.gz root@192.168.1.1:/`  
-3. Ssh into the router and navigate to the directory containing the tarball. 
-4. Extract the tarball with `tar -xvzf seattle_openwrt.tar.gz`
-5. Install the packages required for the Seattle installation. 
+3. Ssh into the router and extract the tarball with `tar -xvzf seattle_openwrt.tar.gz`
+5. Install the packages required for Seattle installation. <br />
+	`opkg install python-light python-compiler python-ctypes python-logging python-openssl`
 6. Navigate to the directory named _seattle_ and run `./install.sh`
 7. To check that Seattle is running, try running: `ps | grep nmmain.py | grep -v grep`
 
@@ -117,7 +117,9 @@ Seattle Dependencies
 - python-ctypes
 - python-logging
 - python-openssl
-- python-xml
+
+Additional Packages
+- git-http (for unit-testing)
 
 
 ## Errors
@@ -138,7 +140,7 @@ The following are descriptions of common issues/errors encountered when trying t
   - Change destination of Seattle installation to /tmp 
   - `opkg install seattle_1.0-1_ar71xx.ipk -d ram`
 
-* `Benchmark failed for cpu resource: cpu cores data not found`
+
 
 
 
